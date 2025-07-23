@@ -26,7 +26,13 @@ const Bedroom = () => {
             pin: true,
             scrub: 1,
             snap: 1 / (slides.length - 1),
-            end: () => `+=${sliderRef.current?.offsetWidth * 2}`,
+           end: () => {
+  if (sliderRef.current) {
+    return `+=${sliderRef.current.offsetWidth * 2}`;
+  }
+  return '+=1000'; // fallback value to prevent breaking build
+},
+
           }
         });
 

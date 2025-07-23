@@ -42,7 +42,12 @@ const LivingRoom = () => {
             pin: true,
             scrub: 1,
             snap: 1 / (images.length - 1),
-            end: () => `+=${galleryRef.current?.offsetWidth * 2}`,
+end: () => {
+  if (galleryRef.current) {
+    return `+=${galleryRef.current.offsetWidth * 2}`;
+  }
+  return '+=1000'; // fallback value
+},
           },
         });
       }
