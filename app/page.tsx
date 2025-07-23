@@ -19,7 +19,7 @@ const Homepage = () => {
     const ctx = gsap.context(() => {
       // Hero parallax effect
       gsap.to('.hero-bg', {
-        yPercent: -50,
+        yPercent: -20,
         ease: 'none',
         scrollTrigger: {
           trigger: heroRef.current,
@@ -99,7 +99,7 @@ const Homepage = () => {
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen overflow-hidden">
         <div 
-          className="hero-bg absolute inset-0 bg-cover bg-center"
+          className="hero-bg absolute inset-0 bg-cover bg-center h-screen"
           style={{
             backgroundImage: 'url(https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)',
           }}
